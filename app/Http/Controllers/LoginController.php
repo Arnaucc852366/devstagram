@@ -14,8 +14,6 @@ class LoginController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->remember);
-
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required'
