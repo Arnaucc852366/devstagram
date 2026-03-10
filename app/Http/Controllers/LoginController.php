@@ -14,7 +14,7 @@ class LoginController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->remember);
+        // dd($request->remember);
 
         $this->validate($request, [
             'email' => 'required|email',
@@ -26,6 +26,6 @@ class LoginController extends Controller
             return back()->with('mensaje', 'Credenciales Incorrectas');
         }
 
-        return redirect()->route('muro');
+        return redirect()->route('posts.index', auth()->user()->username);
     }
 }
